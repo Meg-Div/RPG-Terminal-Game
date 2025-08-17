@@ -4,7 +4,7 @@
 Project Description: 
 - A game that allows the user to purchase two hats of the user’s choice and the ability to eat or use the item pulled from the hat as a distraction in order to flee.
 
-Project Expectations:
+Original Project Expectations:
 - Create a class for your characters
 - Have a good and bad character
 - Write out any actions as functions
@@ -16,7 +16,19 @@ Project Expectations:
 Project Languages: 
 - Python
 
+Refactoring Updates:
+- Added Multiple Classes
+- Added Inheritance
+- Added in Unit Tests
+- Added in Docstrings
+- Expounded on Recursion
+- Data Members changed to Private
+- Changed to Snake Case
+- Switched nested lists to dicts
+- Logic changes
+  - First choice removed from second choice options
+  - Dynamic iteration over hat choices
+
 Links:
-- [GitHub](https://github.com/Meg-Div/DigitalCraftsProjects/tree/main/rpg-game)
-- [Dev.to blog](https://dev.to/megdiv/thats-a-hat-57gn)
-- [Replit](https://replit.com/@Meg-Div/Thats-A-Hat#main.py)
+- [GitHub](https://github.com/Meg-Div/RPG-Terminal-Game)
+- [Dev.to original blog](https://dev.to/megdiv/thats-a-hat-57gn)
