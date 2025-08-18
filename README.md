@@ -21,7 +21,6 @@ Refactoring Updates:
 - Added Inheritance
 - Added in Unit Tests
 - Added in Docstrings
-- Expounded on Recursion
 - Data Members changed to Private
 - Changed to Snake Case
 - Switched nested lists to dicts
