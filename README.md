@@ -17,8 +17,8 @@ Project Languages:
 - Python
 
 Refactoring Updates:
-- Added Multiple Classes
-- Added Inheritance
+- Added in Multiple Classes
+- Added in Inheritance
 - Added in Unit Tests
 - Added in Docstrings
 - Data Members changed to Private
