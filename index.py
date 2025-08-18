@@ -64,8 +64,8 @@ class Hero:
 
         # changes the hat if no items left
         if len(items[0]) == 0 and len(hats) == 2:
-            print(f"Your {hats[0]} disappears!")
-            print(f"You put on your second hat and now wear your {hats[1]}!\n")
+            print(f'Your {hats[0]} disappears!')
+            print(f"You put on your second hat and now wear your {hats[1]}!")
             self.del_hero_hat_dict(hats[0])
             return "hat changed"
 
@@ -77,7 +77,7 @@ class Hero:
             time.sleep(3)
             print("You try to run but the police tackle you and haul you away to jail.")
             #time.sleep(3)
-            print("Hope you have a good attorney!\n")
+            print("Hope you have a good attorney!")
             return "game over"
 
         return True
@@ -92,25 +92,18 @@ class Actions(Hero):
     def welcome(self, new_hero):
         """ welcomes the hero and sets the stage with dialogue """
         health = new_hero.get_health()
-        print("\nWelcome Hero!")
+        print("Welcome Hero!")
         time.sleep(3)
-        print(f"""
-        You are being chased by the police for a crime you didn't commit.
-        You duck into a store to hide but you've been running so long 
-        your health is at: {health} / 100
-        """)
+        print(f"You are being chased by the police for a crime you didn't commit.")
+        print(f"You duck into a store to hide but you I've been running so long \nyour health is at: {health} / 100")
         time.sleep(6)
-        print("""
-        The shopkeep sees you attempting to hide and offers to sell you a magic hat.
-        You are exhausted and stare at him as he puts a hat on,
-        only to take it off to pull something out of it.
-        """)
+        print("The shopkeep sees you attempting to hide and offers to sell you a magic hat.")
+        print("You are exhausted and stare at him as he puts a hat on,")
+        print("only to take it off to pull something out of it.")
         time.sleep(7)
-        print("""
-        Your eyes widen.
-        "How much?" You ask and you have just enough cash to purchase two.
-        He tells you that you can only wear one hat at a time...
-        """)
+        print("Your eyes widen.")
+        print('"How much?" You ask and you have just enough cash to purchase two.')
+        print("He tells you that you can only wear one hat at a time...")
         time.sleep(6)
 
     def choose_hats(self, new_hero):
@@ -119,11 +112,11 @@ class Actions(Hero):
         hats_list = list(hat_dict.keys())
 
         # user prompted to choose hats
-        print("\nChoose your first hat to use Hero!")
+        print("Choose your first hat to use Hero!")
         choice = int(new_hero.hat_options(new_hero))
         first_hat = hats_list[choice - 1]
 
-        print(f"\nYou chose: {first_hat}\n")
+        print(f"You chose: {first_hat}")
         first_hat_items = hat_dict[first_hat]
 
         # hat added to hero's dict, and removed from original hat_dict
@@ -133,11 +126,11 @@ class Actions(Hero):
         hat_dict = new_hero.get_hat_dict()
         hats_list = list(hat_dict.keys())
 
-        print("\nChoose your second hat to use Hero!")
+        print("Choose your second hat to use Hero!")
         choice = int(new_hero.hat_options(new_hero))
         second_hat = hats_list[choice - 1]
 
-        print(f"\nYou chose: {second_hat}\n")
+        print(f"You chose: {second_hat}")
         second_hat_items = hat_dict[second_hat]
 
         # hat added to hero's dict, and removed from original hat_dict
@@ -147,8 +140,9 @@ class Actions(Hero):
         # current hero's hats
         hero_hat_list = list(new_hero.get_hero_hat_dict().keys())
 
-        print(f"\nYou put on the {hero_hat_list[0]} and pocket the {hero_hat_list[1]}.\n")
-        print("\nNo sooner do you hand him the money and take the two hats,\nwhen the police bust into the store.\n")
+        print(f"You put on the {hero_hat_list[0]} and pocket the {hero_hat_list[1]}.")
+        print("No sooner do you hand him the money and take the two hats,")
+        print("when the police bust into the store.")
 
     def hat_options(self, new_hero):
         """ gives the hero their hat options """
@@ -157,11 +151,11 @@ class Actions(Hero):
         # runs through hat list to give user options
         for i, (key, value) in enumerate(hat_dict.items()):
             print(f"{i+1}: {key}")
-        response = input(f"\nYour choice: ")
+        response = input(f"Your choice: ")
 
         # checking for input bounds
         if (response.isnumeric() is False) or (int(response) < 1 or int(response) > len(list(hat_dict.keys()))):
-            print("\nPlease choose a hat listed:")
+            print("Please choose a hat listed:")
             return self.hat_options(new_hero)
 
         return response
@@ -205,14 +199,13 @@ class Actions(Hero):
     def choose_action(self, item):
         """ prompts the hero to choose an action for the item """
         time.sleep(3)
-        print(f"""Would you like to: 
-        1) Eat the {item} to attempt to increase your health 
-        2) Use the {item} to attempt to get away from the police
-        """)
+        print(f"Would you like to:")
+        print(f"1) Eat the {item} to attempt to increase your health")
+        print(f"2) Use the {item} to attempt to get away from the police")
         action = input("Your choice:")
         # if the entry is not a number or out of bounds
         if (action.isnumeric() is False) or (int(action) < 1 or int(action) > 2):
-            print("\nPlease choose 1 or 2:")
+            print("Please choose 1 or 2:")
             return self.choose_action(item)
 
         return action
@@ -225,10 +218,11 @@ class Actions(Hero):
         new_hero.update_health(change)
         health = new_hero.get_health()
 
+        time.sleep(3)
+
         # checks health bounds
         if health < 100 and health > 0:
-            print(f"\nYour health is now at: {health} / 100\n")
-            #time.sleep(3)
+            print(f"Your health is now at: {health} / 100")
             result = new_hero.del_hero_hat_dict_item(hats[0], item)
 
         if result == "game over":
@@ -238,7 +232,7 @@ class Actions(Hero):
         if health > 90:
             print("You're now finally strong enough to get away!")
             #time.sleep(3)
-            print("You race out the side door and the cops are left in your dust!\n")
+            print("You race out the side door and the cops are left in your dust!")
             return "game over"
 
         if health < 10:
@@ -246,7 +240,7 @@ class Actions(Hero):
             #time.sleep(3)
             print("The police tackle you and haul you away to jail.")
             #time.sleep(3)
-            print("Hope you have a good attorney!\n")
+            print("Hope you have a good attorney!")
             return "game over"
 
     def eat_item(self, item, new_hero):
@@ -258,7 +252,7 @@ class Actions(Hero):
         random.shuffle(change_list)
         change = change_list[0]
 
-        print(f"\nYou put your hat back on and eat the {item}.")
+        print(f"You put your hat back on and eat the {item}.")
         time.sleep(3)
 
         # dialogue based on health change
@@ -283,7 +277,7 @@ class Actions(Hero):
         response = police_dict[change]
 
         # dialogue based on health change
-        print(f"\nYou put your hat back on and use your {item} as a distraction,")
+        print(f"You put your hat back on and use your {item} as a distraction,")
         print(f"{response}")
 
         result = new_hero.health_check(new_hero, change, item)
