@@ -1,5 +1,5 @@
 
-# That’s A Hat
+# That’s A Hat 🎩
 
 Project Description: 
 - A game that allows the user to purchase two hats of the user’s choice and the ability to eat or use the item pulled from the hat as a distraction in order to flee.
